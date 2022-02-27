@@ -2,6 +2,9 @@ package org.bihe.beans;
 
 import java.io.Serializable;
 
+/**
+ * author : PARSA
+ */
 public class Staff implements Serializable {
 
     private static final long serialVersionUID = 1l;

@@ -3,6 +3,9 @@ package org.bihe.beans;
 import java.io.Serializable;
 import java.util.Date;
 
+/**
+ * author : PARSA
+ */
 public class Customer implements Serializable {
 
     private static final long serialVersionUID = 1l;
