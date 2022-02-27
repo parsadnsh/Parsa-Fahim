@@ -1,8 +1,11 @@
 package org.bihe.beans;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Appointment {
+public class Appointment implements Serializable {
+
+    private static final long serialVersionUID = 1l;
 
     private int id;
     private Date date;

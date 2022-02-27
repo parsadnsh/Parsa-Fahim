@@ -1,8 +1,11 @@
 package org.bihe.beans;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Customer {
+public class Customer implements Serializable {
+
+    private static final long serialVersionUID = 1l;
 
     private int id;
     private String firstName;
@@ -11,6 +14,10 @@ public class Customer {
     private int age;
     private Date registrationDate;
     private String phoneNo;
+
+    public Customer() {
+
+    }
 
     public Customer(int id, String firstName, String lastName, String email, int age, Date registrationDate, String phoneNo) {
         this.id = id;

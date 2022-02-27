@@ -1,6 +1,10 @@
 package org.bihe.beans;
 
-public class Staff {
+import java.io.Serializable;
+
+public class Staff implements Serializable {
+
+    private static final long serialVersionUID = 1l;
 
     private int staffID;
     private String fullName;
@@ -8,6 +12,10 @@ public class Staff {
     private String role;
     private String skype;
     private String mobile;
+
+    public Staff() {
+
+    }
 
     public Staff(int staffID, String fullName, String email, String role, String skype, String mobile) {
         this.staffID = staffID;
