@@ -11,19 +11,20 @@ import java.util.Map;
  */
 public class Json implements JsonInt{
 
-//    public static void main(String[] args) {
-//        Customer c1 = new Customer();
-//        c1.setFirstName("dvg");
-//        c1.setLastName("dvvfre");
-//        c1.setAge(12);
-//        JSONObject jo = new JSONObject();
-//        Map <String, String> m = new HashMap<String, String>();
-//        m.put("first", c1.getFirstName());
-//        jo.put(c1, m);
-//        HashMap<String, String> s = jo.get(c1);
-//        Object o = jo.get(c1);
-//        System.out.println(o);
-//    }
+
+    public static void main(String[] args) {
+        Customer c1 = new Customer();
+        c1.setFirstName("dvg");
+        c1.setLastName("dvvfre");
+        c1.setAge(12);
+        JSONObject jo = new JSONObject();
+        Map <String, String> m = new HashMap<String, String>();
+        m.put("first", c1.getFirstName());
+        m.put("last", "najcbiyg");
+        m.put("age", "" + c1.getAge() + "");
+
+        System.out.println(jo.put(c1, m));
+    }
 
     private static Json instance;
     private JSONObject jsonObject;
