@@ -14,7 +14,7 @@ public class Main {
             System.out.println(str);
             System.out.println("----------------------");
         }
-//        boolean r = ioi.writeToFile("1.txt", "salam \nparsa ");
+        boolean r = ioi.writeToFile("1.txt", "salam \nparsa ");
 //        boolean r2 = ioi.writeToFile("1.txt", "by \nparsa ");
 //
 //        System.out.println(r + " " + r2);
