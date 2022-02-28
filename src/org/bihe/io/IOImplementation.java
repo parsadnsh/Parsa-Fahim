@@ -25,20 +25,18 @@ public class IOImplementation implements IO {
     public boolean writeToFile(String fileName, JSONObject jsonObject) {
         boolean result = false;
         File file = new File(fileName);
-        PrintWriter pw = null;
-        FileWriter fw = null;
+        FileOutputStream fos = null;
+        ObjectOutputStream oos = null;
         try {
-            if (!file.exists())
-                file.createNewFile();
-            fw = new FileWriter(file);
-            pw = new PrintWriter(fw);
-            pw.write(jsonObject.toJSONString());
-            pw.flush();
-            pw.close();
+            fos = new FileOutputStream(fileName);
+            oos = new ObjectOutputStream(fos);
+            oos.writeObject(jsonObject);
+            oos.close();
             result = true;
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-            result = false;
         }
         return result;
     }
