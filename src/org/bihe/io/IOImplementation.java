@@ -22,33 +22,63 @@ public class IOImplementation implements IO {
         return instance;
     }
 
+
+
+//    @Override
+//    public boolean writeToFile(String fileName, String content) {
+//        File file = new File(fileName);
+//        PrintWriter writer = null;
+//        FileWriter fileWriter = null;
+//        BufferedWriter bufferedWriter = null;
+//        try {
+//            if (!file.exists())
+//                file.createNewFile();
+//            fileWriter = new FileWriter(file);
+//            bufferedWriter = new BufferedWriter(fileWriter);
+//            writer = new PrintWriter(bufferedWriter);
+//            writer.println(content);
+//            writer.flush();
+//            return true;
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//            return false;
+//        } finally {
+//            if (writer != null)
+//                writer.close();
+//            if (fileWriter != null) {
+//                try {
+//                    fileWriter.close();
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//            if (bufferedWriter != null) {
+//                try {
+//                    bufferedWriter.close();
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        }
+//    }
+
     @Override
     public boolean writeToFile(String fileName, String content) {
+        boolean result = false;
         File file = new File(fileName);
-        PrintWriter writer = null;
-        FileWriter fileWriter = null;
         try {
             if (!file.exists())
                 file.createNewFile();
-            fileWriter = new FileWriter(file);
-            writer = new PrintWriter(fileWriter);
-            writer.println(content);
-            writer.flush();
-            return true;
-        } catch (IOException e) {
-            e.printStackTrace();
-            return false;
-        } finally {
-            if (writer != null)
-                writer.close();
-            if (fileWriter != null) {
-                try {
-                    fileWriter.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
+            FileWriter fw = new FileWriter(file, true);
+            BufferedWriter bw = new BufferedWriter(fw);
+            bw.write(content);
+            bw.close();
+            fw.close();
+            result = true;
+        }catch (IOException e) {
+                e.printStackTrace();
         }
+        return result;
     }
 
     @Override
